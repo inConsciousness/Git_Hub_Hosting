@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploying a Website on GitHub Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 3px solid #0056b3;
+        }
+        footer {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 3px solid #0056b3;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-box {
+            border: 2px solid #007bff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #e9ecef;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            margin: -15px -15px 15px -15px;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Deploying a Website on GitHub Pages</h1>
+    </header>
+
+    <div class="container">
+        <div class="section-box">
+            <div class="section-header">1. Prepare Your Repository</div>
+
+            <h3>1.1 Create a GitHub Repository (if not already created)</h3>
+            <ul>
+                <li>Go to <a href="https://github.com" target="_blank" class="button">GitHub</a> and sign in.</li>
+                <li>Click on the "+" icon in the top right corner and select "New repository."</li>
+                <li>Fill in the repository name, description, and other details.</li>
+                <li>Click "Create repository."</li>
+            </ul>
+            
+            <h3>1.2 Clone the Repository (if you haven't already)</h3>
+            <div class="code-block">
+                <code>git clone https://github.com/yourusername/repositoryname.git</code>
+            </div>
+            <p>Replace <code>yourusername</code> and <code>repositoryname</code> with your GitHub username and repository name.</p>
+        </div>
+
+        <div class="section-box">
+            <div class="section-header">2. Add Your Website Files</div>
+            
+            <h3>2.1 Navigate to Your Project Directory</h3>
+            <div class="code-block">
+                <code>cd path/to/your/repository</code>
+            </div>
+
+            <h3>2.2 Add Your Website Files</h3>
+            <ul>
+                <li>Ensure your main file is named <code>index.html</code> and placed in the root directory.</li>
+                <li>Add any other necessary files (e.g., CSS, JavaScript, images).</li>
+            </ul>
+
+            <h3>2.3 Commit Your Changes</h3>
+            <div class="code-block">
+                <code>git add .</code>
+            </div>
+            <div class="code-block">
+                <code>git commit -m "Add website files"</code>
+            </div>
+            <div class="code-block">
+                <code>git push origin master</code>
+            </div>
+            <p>Replace <code>master</code> with <code>main</code> if that is your branch name.</p>
+        </div>
+
+        <div class="section-box">
+            <div class="section-header">3. Configure GitHub Pages</div>
+            
+            <h3>3.1 Go to Your Repository on GitHub</h3>
+            <ul>
+                <li>Navigate to the repository where you have pushed your website files.</li>
+            </ul>
+
+            <h3>3.2 Open Settings</h3>
+            <ul>
+                <li>Click on the "Settings" tab at the top of the repository page.</li>
+            </ul>
+
+            <h3>3.3 Locate GitHub Pages Settings</h3>
+            <ul>
+                <li>Scroll down to the "Pages" section on the left sidebar or find the "Pages" option under the settings.</li>
+            </ul>
+
+            <h3>3.4 Set the Source</h3>
+            <ul>
+                <li><strong>Branch:</strong> Select the branch you used for GitHub Pages (e.g., <code>master</code> or <code>main</code>).</li>
+                <li><strong>Folder:</strong> Choose <code>/ (root)</code> if <code>index.html</code> is in the root directory. This ensures that GitHub Pages will serve <code>index.html</code> as the homepage.</li>
+            </ul>
+
+            <h3>3.5 Save Changes</h3>
+            <ul>
+                <li>Click "Save" to apply the changes.</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <div class="section-header">4. Verify Your Site</div>
+            
+            <h3>4.1 Find the URL</h3>
+            <ul>
+                <li>GitHub Pages will provide a URL where your site will be hosted. It typically looks like <code>https://yourusername.github.io/repositoryname</code>.</li>
+            </ul>
+
+            <h3>4.2 Access Your Site</h3>
+            <ul>
+                <li>Visit the URL to see your live site. It may take a few minutes for changes to appear.</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <div class="section-header">Additional Notes</div>
+            <ul>
+                <li><strong>Troubleshooting:</strong> If your site does not appear as expected, check for errors in the browser console or network tab.</li>
+                <li><strong>Custom Domains:</strong> If you have a custom domain, you can configure it in the GitHub Pages settings under the "Custom domain" section.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Deploying a Website on GitHub Pages. All rights reserved.</p>
+    </footer>
+</body>
+</html>
